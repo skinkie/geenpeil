@@ -161,6 +161,23 @@
             var vorig = null;
             var done = 0;
 
+        function colorsvg() {
+            for (var gemeente in json) {
+                $('#'+json[gemeente]['gmcode']).attr("fill-opacity", "0.5");
+                $('#'+json[gemeente]['gmcode']).click(function(){
+                    for (var i = 0; i < json.length; i++) {
+                        if (json[i]['gmcode'] == this.id) {
+                            done = 1;
+                            index = i;
+                            setTimeout(render, 100);
+                            break;
+                        }
+                    }
+                });
+            }
+        }
+
+
         function updateUitslagen() {
             $.getJSON( "json/uitslagen.json" ).done(function( result ) {
                 json = result;
@@ -173,6 +190,7 @@
                 }
 
                 $("#teller").text(aantal);
+                colorsvg();
             });
             done = 0;
         }
@@ -235,21 +253,6 @@
             }
         }
 
-        function colorsvg() {
-            for (var gemeente in json) {
-                $('#'+json[gemeente]['gmcode']).attr("fill-opacity", "0.5");
-                $('#'+json[gemeente]['gmcode']).click(function(){
-                    for (var i = 0; i < json.length; i++) {
-                        if (json[i]['gmcode'] == this.id) {
-                            done = 1;
-                            index = i;
-                            setTimeout(render, 100);
-                            break;
-                        }
-                    }
-                });
-            }
-        }
 
         $( document ).ready(function() {
             $('#svgload').load('img/verkiezingen3.svg');
@@ -268,8 +271,6 @@
                 $("#"+lijst+" .partij").hide();
                 $("#"+lijst+" .aantal").hide();
             }
-
-            setTimeout(colorsvg, 500);
 
             setTimeout(render, 500);
         });
