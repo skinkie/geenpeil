@@ -1,0 +1,10 @@
+[
+{"uitslagen": {"cda": 10, "pvv": 5, "pvda": 50, "vvd": 20, "d66": 10, "sp": 1, "gl": 1, "cusgp": 0, "artikel50": 5, "piraten": 1, "50plus": 0, "pvdd": 0, "overig": 0},
+ "uitslagen_absoluut": {"cda": 10, "pvv": 5, "pvda": 50, "vvd": 20, "d66": 10, "sp": 1, "gl": 1, "cusgp": 0, "artikel50": 5, "piraten": 1, "50plus": 0, "pvdd": 0, "overig": 0},
+ "gemeente": "Leidschendam-Voorburg", "stemgerechtigden": "50.000", "steekproef": "20%", "gmcode": "GM1916", "aantal": 400 },
+{"uitslagen": {"cda": 1, "pvv": 2, "pvda": 0, "vvd": 1, "d66": 6, "sp": 2, "gl": 0, "cusgp": 0, "artikel50": 0, "piraten": 0, "50plus": 0, "pvdd": 1, "overig": 0},
+ "uitslagen_absoluut": {"cda": 100, "pvv": 10, "pvda": 0, "vvd": 10, "d66": 60, "sp": 20, "gl": 0, "cusgp": 0, "artikel50": 0, "piraten": 0, "50plus": 0, "pvdd": 1, "overig": 0}, "gemeente": "Den Haag", "stemgerechtigden": "80.000", "steekproef": "70%", "gmcode": "GM0518", "aantal": 200},
+{"uitslagen": {"cda": 1, "pvv": 1, "pvda": 0, "vvd": 0, "d66": 2, "sp": 1, "gl": 0, "cusgp": 4, "artikel50": 0, "piraten": 0, "50plus": 0, "pvdd": 0, "overig": 0},
+ "uitslagen_absoluut": {"cda": 1, "pvv": 1, "pvda": 0, "vvd": 0, "d66": 2, "sp": 1, "gl": 0, "cusgp": 4, "artikel50": 0, "piraten": 0, "50plus": 0, "pvdd": 0, "overig": 0},
+ "gemeente": "Urk", "stemgerechtigden": "30.000", "steekproef": "20%", "gmcode": "GM0184", "aantal": 2342}
+]

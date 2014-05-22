@@ -1,0 +1,276 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+
+        <link href="//fonts.googleapis.com/css?family=Source+Sans Pro:200italic,200,300italic,300,400italic,400,600italic,600,700italic,700,900italic,900" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div id="svgload" style="position:absolute; top: 79px; left: 508px; width:828px; height: 982px;"></div>
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <img src="img/gs-logo.png" id="logo" style="position: absolute; top: 10px; right: 10px; width: 200px; height: 200px;" />
+        <h3 id="teller" style="position: absolute; top: 170px; right: 10px; text-align: center; width: 200px; color: #ff0099; text-shadow: 0px 0px 7px #ffffff;">0</h3>
+
+        <div id="bars">
+        <h1 style="margin-left: 60px;" id="gemeente"></h1>
+        <div style="margin-left: 60px;">
+        <!--    Stemgerechtigden: <div style="display: inline;" id="stemgerechtigden"></div><br /> -->
+        <!--    Steekproef: <div style="display: inline;" id="steekproef"></div><br /> -->
+        </div>
+
+
+        <div id="cda" style="position: absolute; left: 37px; bottom: 30px;">
+        <div class="oval" style="position: absolute; bottom: 10px;"></div>
+        <div class="fill" style="position: absolute; bottom: 35px; height: 100px;"></div>
+        <div class="oval2" style="position: absolute; bottom: 110px; background: orange;"></div>
+        <p class="percentage" style="position: absolute; bottom: 65px; width: 100px; text-align: center;"></p>
+        <p class="partij" style="position: absolute; bottom: -25px; width: 100px; text-align: center;">CDA</p>
+        <p class="aantal" style="position: absolute; bottom: -60px; width: 100px; text-align: center; font-size: 0.7em;">0000</p>
+        </div>
+
+        <div id="pvv" style="position: absolute; left: 174px; bottom: 30px;">
+        <div class="oval" style="position: absolute; bottom: 10px;"></div>
+        <div class="fill" style="position: absolute; bottom: 35px; height: 140px; width: 100px;"></div>
+        <div class="oval2" style="position: absolute; bottom: 150px; background: orange;"></div>
+        <p class="percentage" style="position: absolute; bottom: 65px; width: 100px; text-align: center;"></p>
+        <p class="partij" style="position: absolute; bottom: -25px; width: 100px; text-align: center;">PVV</p>
+        <p class="aantal" style="position: absolute; bottom: -60px; width: 100px; text-align: center; font-size: 0.7em;">0000</p>
+        </div>
+
+        <div id="pvda" style="position: absolute; left: 311px; bottom: 30px;">
+        <div class="oval" style="position: absolute; bottom: 10px;"></div>
+        <div class="fill" style="position: absolute; bottom: 35px; height: 140px;"></div>
+        <div class="oval2" style="position: absolute; bottom: 150px; background: orange;"></div>
+        <p class="percentage" style="position: absolute; bottom: 65px; width: 100px; text-align: center;"></p>
+        <p class="partij" style="position: absolute; bottom: -25px; width: 100px; text-align: center;">PvdA</p>
+        <p class="aantal" style="position: absolute; bottom: -60px; width: 100px; text-align: center; font-size: 0.7em;">0000</p>
+        </div>
+
+        <div id="vvd" style="position: absolute; left: 448px; bottom: 30px;">
+        <div class="oval" style="position: absolute; bottom: 10px;"></div>
+        <div class="fill" style="position: absolute; bottom: 35px; height: 140px;"></div>
+        <div class="oval2" style="position: absolute; bottom: 150px; background: orange;"></div>
+        <p class="percentage" style="position: absolute; bottom: 65px; width: 100px; text-align: center;"></p>
+        <p class="partij" style="position: absolute; bottom: -25px; width: 100px; text-align: center;">VVD</p>
+        <p class="aantal" style="position: absolute; bottom: -60px; width: 100px; text-align: center; font-size: 0.7em;">0000</p>
+        </div>
+
+        <div id="d66" style="position: absolute; left: 585px; bottom: 30px;">
+        <div class="oval" style="position: absolute; bottom: 10px;"></div>
+        <div class="fill" style="position: absolute; bottom: 35px; height: 140px;"></div>
+        <div class="oval2" style="position: absolute; bottom: 150px; background: orange;"></div>
+        <p class="percentage" style="position: absolute; bottom: 65px; width: 100px; text-align: center;"></p>
+        <p class="partij" style="position: absolute; bottom: -25px; width: 100px; text-align: center;">D66</p>
+        <p class="aantal" style="position: absolute; bottom: -60px; width: 100px; text-align: center; font-size: 0.7em;">0000</p>
+        </div>
+
+        <div id="gl" style="position: absolute; left: 722px; bottom: 30px;">
+        <div class="oval" style="position: absolute; bottom: 10px;"></div>
+        <div class="fill" style="position: absolute; bottom: 35px; height: 140px;"></div>
+        <div class="oval2" style="position: absolute; bottom: 150px; background: orange;"></div>
+        <p class="percentage" style="position: absolute; bottom: 65px; width: 100px; text-align: center;"></p>
+        <p class="partij" style="position: absolute; bottom: -25px; width: 100px; text-align: center;">GL</p>
+        <p class="aantal" style="position: absolute; bottom: -60px; width: 100px; text-align: center; font-size: 0.7em;">0000</p>
+        </div>
+
+        <div id="sp" style="position: absolute; left: 859px; bottom: 30px;">
+        <div class="oval" style="position: absolute; bottom: 10px;"></div>
+        <div class="fill" style="position: absolute; bottom: 35px; height: 140px;"></div>
+        <div class="oval2" style="position: absolute; bottom: 150px; background: orange;"></div>
+        <p class="percentage" style="position: absolute; bottom: 65px; width: 100px; text-align: center;"></p>
+        <p class="partij" style="position: absolute; bottom: -25px; width: 100px; text-align: center;">SP</p>
+        <p class="aantal" style="position: absolute; bottom: -60px; width: 100px; text-align: center; font-size: 0.7em;">0000</p>
+        </div>
+
+        <div id="cusgp" style="position: absolute; left: 996px; bottom: 30px;">
+        <div class="oval" style="position: absolute; bottom: 10px;"></div>
+        <div class="fill" style="position: absolute; bottom: 35px; height: 140px;"></div>
+        <div class="oval2" style="position: absolute; bottom: 150px; background: orange;"></div>
+        <p class="percentage" style="position: absolute; bottom: 65px; width: 100px; text-align: center;"></p>
+        <p class="partij" style="position: absolute; bottom: 0px; width: 100px; text-align: center; font-size: .5em;">CU-SGP</p>
+        <p class="aantal" style="position: absolute; bottom: -60px; width: 100px; text-align: center; font-size: 0.7em;">0000</p>
+        </div>
+
+        <div id="artikel50" style="position: absolute; left: 1133px; bottom: 30px;">
+        <div class="oval" style="position: absolute; bottom: 10px;"></div>
+        <div class="fill" style="position: absolute; bottom: 35px; height: 140px;"></div>
+        <div class="oval2" style="position: absolute; bottom: 150px; background: orange;"></div>
+        <p class="percentage" style="position: absolute; bottom: 65px; width: 100px; text-align: center;">4</p>
+        <p class="partij" style="position: absolute; bottom: 0px; width: 100px; text-align: center; font-size: .5em;">Artikel50</p>
+        <p class="aantal" style="position: absolute; bottom: -60px; width: 100px; text-align: center; font-size: 0.7em;">0000</p>
+        </div>
+
+        <div id="piraten" style="position: absolute; left: 1270px; bottom: 30px;">
+        <div class="oval" style="position: absolute; bottom: 10px;"></div>
+        <div class="fill" style="position: absolute; bottom: 35px; height: 140px;"></div>
+        <div class="oval2" style="position: absolute; bottom: 150px; background: orange;"></div>
+        <p class="percentage" style="position: absolute; bottom: 65px; width: 100px; text-align: center;"></p>
+        <p class="partij" style="position: absolute; bottom: 0px; width: 100px; text-align: center; font-size: .5em;">Piraten</p>
+        <p class="aantal" style="position: absolute; bottom: -60px; width: 100px; text-align: center; font-size: 0.7em;">0000</p>
+        </div>
+
+        <div id="50plus" style="position: absolute; left: 1407px; bottom: 30px;">
+        <div class="oval" style="position: absolute; bottom: 10px;"></div>
+        <div class="fill" style="position: absolute; bottom: 35px; height: 140px;"></div>
+        <div class="oval2" style="position: absolute; bottom: 150px; background: orange;"></div>
+        <p class="percentage" style="position: absolute; bottom: 65px; width: 100px; text-align: center;"></p>
+        <p class="partij" style="position: absolute; bottom: -25px; width: 100px; text-align: center;">50+</p>
+        <p class="aantal" style="position: absolute; bottom: -60px; width: 100px; text-align: center; font-size: 0.7em;">0000</p>
+        </div>
+
+        <div id="pvdd" style="position: absolute; left: 1544px; bottom: 30px;">
+        <div class="oval" style="position: absolute; bottom: 10px;"></div>
+        <div class="fill" style="position: absolute; bottom: 35px; height: 140px;"></div>
+        <div class="oval2" style="position: absolute; bottom: 150px; background: orange;"></div>
+        <p class="percentage" style="position: absolute; bottom: 65px; width: 100px; text-align: center;"></p>
+        <p class="partij" style="position: absolute; bottom: -25px; width: 100px; text-align: center;">PvdD</p>
+        <p class="aantal" style="position: absolute; bottom: -60px; width: 100px; text-align: center; font-size: 0.7em;">0000</p>
+        </div>
+
+        <div id="overig" style="position: absolute; left: 1749px; bottom: 30px;">
+        <div class="oval" style="position: absolute; bottom: 10px;"></div>
+        <div class="fill" style="position: absolute; bottom: 35px; height: 140px;"></div>
+        <div class="oval2" style="position: absolute; bottom: 150px; background: orange;"></div>
+        <p class="percentage" style="position: absolute; bottom: 65px; width: 100px; text-align: center;"></p>
+        <p class="partij" style="position: absolute; bottom: 0px; width: 100px; text-align: center; font-style:italic; font-size: .5em ">overig</p>
+        <p class="aantal" style="position: absolute; bottom: -60px; width: 100px; text-align: center; font-size: 0.7em;">0000</p>
+        </div>
+        </div>
+
+       <script>
+            var json = [];
+            var index = 0;
+            var vorig = null;
+            var done = 0;
+
+        function updateUitslagen() {
+            $.getJSON( "json/uitslagen.json" ).done(function( result ) {
+                json = result;
+                aantal = 0;
+
+                for (var gemeente in result) {
+                    aantal = aantal + result[gemeente]['aantal'];
+                }
+
+                $("#teller").text(aantal);
+            });
+            done = 0;
+        }
+
+        function render() {
+            var resultaat = json[index];
+            var multiplier = 12;
+            index++;
+
+            $("#bars").show();
+            $("#gemeente").text(resultaat['gemeente']);
+            $("#stemgerechtigden").text(resultaat['stemgerechtigden']);
+            $("#steekproef").text(resultaat['steekproef']);
+            if (vorig !== null) {
+               $(vorig).attr("fill-opacity", "0.5");
+               $(vorig).attr("stroke-width", "0.3");
+            }
+            $('#'+resultaat['gmcode']).attr("fill-opacity", "1.0");
+            $('#'+resultaat['gmcode']).attr("stroke-width", "1.4");
+            vorig = '#'+resultaat['gmcode'];
+            var uitslagen = resultaat['uitslagen'];
+            var uitslagen_absoluut = resultaat['uitslagen_absoluut'];
+
+            for (var lijst in uitslagen) {
+                if (uitslagen[lijst] > 0) {
+                // var percentage = Math.log(uitslagen[lijst]);
+                var percentage = uitslagen[lijst];
+                var percentage_text = uitslagen[lijst];
+                if ($("#"+lijst).size() > 0) {
+                    $("#"+lijst+" .percentage").hide();
+                    $("#"+lijst+" .fill").show();
+                    $("#"+lijst+" .oval").show();
+                    $("#"+lijst+" .oval2").show();
+                    $("#"+lijst+" .aantal").show();
+
+                    $("#"+lijst+" .fill").animate({
+                        height: percentage * multiplier + 'px'
+                    }, 1000);
+                    $("#"+lijst+" .oval2").animate({
+                        bottom: (percentage * multiplier + 10) + 'px'
+                    }, 1000);
+
+                    if (percentage > 0) {
+                        $("#"+lijst+" .partij").fadeIn(100);
+                        $("#"+lijst+" .aantal").fadeIn(1500).text(uitslagen_absoluut[lijst]);
+
+                        if (percentage > 4) {
+                            $("#"+lijst+" .percentage").fadeIn(1500).css("bottom", percentage * multiplier - 35).text(percentage_text+'%');
+                        }
+                    } else {
+                        $("#"+lijst+" .partij").fadeOut(1000);
+                        $("#"+lijst+" .aantal").fadeOut(1000);
+                    }
+                }
+                }
+            }
+
+            if (index < json.length && done == 0) {
+                setTimeout(render, 10000);
+            }
+        }
+
+        function colorsvg() {
+            for (var gemeente in json) {
+                $('#'+json[gemeente]['gmcode']).attr("fill-opacity", "0.5");
+                $('#'+json[gemeente]['gmcode']).click(function(){
+                    for (var i = 0; i < json.length; i++) {
+                        if (json[i]['gmcode'] == this.id) {
+                            done = 1;
+                            index = i;
+                            setTimeout(render, 100);
+                            break;
+                        }
+                    }
+                });
+            }
+        }
+
+        $( document ).ready(function() {
+            $('#svgload').load('img/verkiezingen3.svg');
+            updateUitslagen();
+            $('#logo').click(function(){$("#bars").fadeOut(1000); updateUitslagen(); });
+            var uitslagen = {'cda': 0, 'pvv': 5, 'pvda': 1, 'vvd': 2, 'd66': 1, 'sp': 1, 'gl': 1, 'cusgp': 0, 'artikel50': 5, 'piraten': 1, '50plus': 0, 'pvdd': 0, 'overig': 0}
+
+            for (var lijst in uitslagen) {
+                $("#"+lijst+" .fill").css("height", 0);
+                $("#"+lijst+" .oval").css("bottom", 10);
+                $("#"+lijst+" .oval2").css("bottom", 10);
+                $("#"+lijst+" .percentage").hide();
+                $("#"+lijst+" .fill").hide();
+                $("#"+lijst+" .oval").hide();
+                $("#"+lijst+" .oval2").hide();
+                $("#"+lijst+" .partij").hide();
+                $("#"+lijst+" .aantal").hide();
+            }
+
+            setTimeout(colorsvg, 500);
+
+            setTimeout(render, 500);
+        });
+            </script>
+    </body>
+</html>
