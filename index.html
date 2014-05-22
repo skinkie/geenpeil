@@ -32,6 +32,7 @@
         <div id="bars">
         <h1 style="margin-left: 60px;" id="gemeente"></h1>
         <div style="margin-left: 60px;">
+            Steekproef: <div style="display: inline;" id="steekproef"></div><br />
         <!--    Stemgerechtigden: <div style="display: inline;" id="stemgerechtigden"></div><br /> -->
         <!--    Steekproef: <div style="display: inline;" id="steekproef"></div><br /> -->
         </div>
@@ -109,7 +110,7 @@
         <p class="aantal" style="position: absolute; bottom: -60px; width: 100px; text-align: center; font-size: 0.7em;">0000</p>
         </div>
 
-        <div id="artikel50" style="position: absolute; left: 1133px; bottom: 30px;">
+        <div id="a50" style="position: absolute; left: 1133px; bottom: 30px;">
         <div class="oval" style="position: absolute; bottom: 10px;"></div>
         <div class="fill" style="position: absolute; bottom: 35px; height: 140px;"></div>
         <div class="oval2" style="position: absolute; bottom: 150px; background: orange;"></div>
@@ -118,7 +119,7 @@
         <p class="aantal" style="position: absolute; bottom: -60px; width: 100px; text-align: center; font-size: 0.7em;">0000</p>
         </div>
 
-        <div id="piraten" style="position: absolute; left: 1270px; bottom: 30px;">
+        <div id="pp" style="position: absolute; left: 1270px; bottom: 30px;">
         <div class="oval" style="position: absolute; bottom: 10px;"></div>
         <div class="fill" style="position: absolute; bottom: 35px; height: 140px;"></div>
         <div class="oval2" style="position: absolute; bottom: 150px; background: orange;"></div>
@@ -127,7 +128,7 @@
         <p class="aantal" style="position: absolute; bottom: -60px; width: 100px; text-align: center; font-size: 0.7em;">0000</p>
         </div>
 
-        <div id="50plus" style="position: absolute; left: 1407px; bottom: 30px;">
+        <div id="op" style="position: absolute; left: 1407px; bottom: 30px;">
         <div class="oval" style="position: absolute; bottom: 10px;"></div>
         <div class="fill" style="position: absolute; bottom: 35px; height: 140px;"></div>
         <div class="oval2" style="position: absolute; bottom: 150px; background: orange;"></div>
@@ -203,7 +204,6 @@
             $("#bars").show();
             $("#gemeente").text(resultaat['gemeente']);
             $("#stemgerechtigden").text(resultaat['stemgerechtigden']);
-            $("#steekproef").text(resultaat['steekproef']);
             if (vorig !== null) {
                $(vorig).attr("fill-opacity", "0.5");
                $(vorig).attr("stroke-width", "0.3");
@@ -213,12 +213,14 @@
             vorig = '#'+resultaat['gmcode'];
             var uitslagen = resultaat['uitslagen'];
             var uitslagen_absoluut = resultaat['uitslagen_absoluut'];
+            var totaal = 0;
 
             for (var lijst in uitslagen) {
                 if (uitslagen[lijst] > 0) {
                 // var percentage = Math.log(uitslagen[lijst]);
                 var percentage = uitslagen[lijst];
                 var percentage_text = uitslagen[lijst];
+                totaal = totaal + uitslagen_absoluut[lijst];
                 if ($("#"+lijst).size() > 0) {
                     $("#"+lijst+" .percentage").hide();
                     $("#"+lijst+" .fill").show();
@@ -248,6 +250,7 @@
                 }
             }
 
+            $("#steekproef").text(totaal + " stemmers");
             if (index < json.length && done == 0) {
                 setTimeout(render, 10000);
             }
@@ -258,7 +261,7 @@
             $('#svgload').load('img/verkiezingen3.svg');
             updateUitslagen();
             $('#logo').click(function(){$("#bars").fadeOut(1000); updateUitslagen(); });
-            var uitslagen = {'cda': 0, 'pvv': 5, 'pvda': 1, 'vvd': 2, 'd66': 1, 'sp': 1, 'gl': 1, 'cusgp': 0, 'artikel50': 5, 'piraten': 1, '50plus': 0, 'pvdd': 0, 'overig': 0}
+            var uitslagen = {'cda': 0, 'pvv': 5, 'pvda': 1, 'vvd': 2, 'd66': 1, 'sp': 1, 'gl': 1, 'cusgp': 0, 'a50': 0, 'pp': 0, 'op': 0, 'pvdd': 0, 'overig': 0}
 
             for (var lijst in uitslagen) {
                 $("#"+lijst+" .fill").css("height", 0);
