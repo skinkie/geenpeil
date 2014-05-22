@@ -192,6 +192,7 @@
 
                 $("#teller").text(aantal);
                 setTimeout(colorsvg, 500);
+                setTimeout(updateUitslagen, 300000);
             });
             done = 0;
         }
@@ -251,9 +252,9 @@
             }
 
             $("#steekproef").text(totaal + " stemmers");
-            if (index < json.length && done == 0) {
-                setTimeout(render, 10000);
-            }
+//            if (index < json.length && done == 0) {
+//                setTimeout(render, 10000);
+//            }
         }
 
 
