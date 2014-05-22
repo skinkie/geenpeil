@@ -167,7 +167,9 @@
                 aantal = 0;
 
                 for (var gemeente in result) {
-                    aantal = aantal + result[gemeente]['aantal'];
+                    for (var lijst in result[gemeente]['uitslagen_absoluut']) {
+                        aantal = aantal + result[gemeente]['uitslagen_absoluut'][lijst];
+                    }
                 }
 
                 $("#teller").text(aantal);
