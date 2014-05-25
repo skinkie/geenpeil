@@ -218,36 +218,43 @@
 
             for (var lijst in uitslagen) {
                 if (uitslagen[lijst] > 0) {
-                // var percentage = Math.log(uitslagen[lijst]);
-                var percentage = uitslagen[lijst];
-                var percentage_text = uitslagen[lijst];
-                totaal = totaal + uitslagen_absoluut[lijst];
-                if ($("#"+lijst).size() > 0) {
-                    $("#"+lijst+" .percentage").hide();
-                    $("#"+lijst+" .fill").show();
-                    $("#"+lijst+" .oval").show();
-                    $("#"+lijst+" .oval2").show();
-                    $("#"+lijst+" .aantal").show();
+                    // var percentage = Math.log(uitslagen[lijst]);
+                    var percentage = uitslagen[lijst];
+                    var percentage_text = uitslagen[lijst];
+                    totaal = totaal + uitslagen_absoluut[lijst];
+                    if ($("#"+lijst).size() > 0) {
+                        $("#"+lijst+" .percentage").hide();
+                        $("#"+lijst+" .fill").show();
+                        $("#"+lijst+" .oval").show();
+                        $("#"+lijst+" .oval2").show();
+                        $("#"+lijst+" .aantal").show();
 
-                    $("#"+lijst+" .fill").animate({
-                        height: percentage * multiplier + 'px'
-                    }, 1000);
-                    $("#"+lijst+" .oval2").animate({
-                        bottom: (percentage * multiplier + 10) + 'px'
-                    }, 1000);
+                        $("#"+lijst+" .fill").animate({
+                            height: percentage * multiplier + 'px'
+                        }, 1000);
+                        $("#"+lijst+" .oval2").animate({
+                            bottom: (percentage * multiplier + 10) + 'px'
+                        }, 1000);
 
-                    if (percentage > 0) {
-                        $("#"+lijst+" .partij").fadeIn(100);
-                        $("#"+lijst+" .aantal").fadeIn(1500).text(uitslagen_absoluut[lijst]);
+                        if (percentage > 0) {
+                            $("#"+lijst+" .partij").fadeIn(100);
+                            $("#"+lijst+" .aantal").fadeIn(1500).text(uitslagen_absoluut[lijst]);
 
-                        if (percentage > 4) {
-                            $("#"+lijst+" .percentage").fadeIn(1500).css("bottom", percentage * multiplier - 35).text(percentage_text+'%');
+                            if (percentage > 4) {
+                                $("#"+lijst+" .percentage").fadeIn(1500).css("bottom", percentage * multiplier - 35).text(percentage_text+'%');
+                            }
+                        } else {
+                            $("#"+lijst+" .partij").fadeOut(1000);
+                            $("#"+lijst+" .aantal").fadeOut(1000);
                         }
-                    } else {
-                        $("#"+lijst+" .partij").fadeOut(1000);
-                        $("#"+lijst+" .aantal").fadeOut(1000);
                     }
-                }
+                } else {
+                     $("#"+lijst+" .partij").fadeOut(1000);
+                     $("#"+lijst+" .aantal").fadeOut(1000);
+                     $("#"+lijst+" .percentage").fadeOut(1000);
+                     $("#"+lijst+" .fill").fadeOut(1000);
+                     $("#"+lijst+" .oval").fadeOut(1000);
+                     $("#"+lijst+" .oval2").fadeOut(1000);
                 }
             }
 
